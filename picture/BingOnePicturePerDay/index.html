@@ -784,7 +784,6 @@
 		let ul1 = document.getElementById("files");
 		//createElement:创建一个元素
 		let eLi1 = document.createElement("li");
-		let eA1 = document.createElement("a");
 		var nameText;
 		$.ajax({
 			url: "https://api.github.com/repos/cnbilinyj/web-res/contents/picture/BingOnePicturePerDay",
@@ -793,13 +792,9 @@
 			success: function(data) {
 				for(let i = 0;i < JSON.parse(data).length;i++){
 					nameText = JSON.parse(data)[i].name;
-					eA1.href = "./" + nameText;
-					eA1.title = "/picture/BingOnePicturePerDay/" + nameText;
-					eA1.class = "file jpg";
-					eA1.innerHTML = nameText;
-					eLi1.appendChild(eA1);
+					eLi1.innerHTML = "<a href=\"\./" + nameText + "\" title=\"/picture/BingOnePicturePerDay/" + nameText + "\" class=\"file jpg\">" + nameText +"</a>";
+					ul1.appendChild(eLi1);
 				}
-				ul1.appendChild(eLi1);
 			}
 		});
 	</script>
