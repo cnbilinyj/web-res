@@ -102,12 +102,7 @@
 			content: url(data:image/svg+xml;utf8;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCA4MCA4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSI2IiB5PSI2IiB3aWR0aD0iNjgiIGhlaWdodD0iNjgiIHJ4PSI1IiByeT0iNSIvPjxjaXJjbGUgY3g9IjI0IiBjeT0iMjQiIHI9IjgiLz48cGF0aCBkPSJNNzMgNDkgNTkgMzQgMzcgNTJtMTYgMjBMMjcgNDIgNyA1OCIvPjwvc3ZnPg==)
 		}
 
-		::selection {
-			background-color: #79ffe1;
-			color: #000
-		}
-
-		::-moz-selection {
+		::selection , ::-moz-selection {
 			background-color: #79ffe1;
 			color: #000
 		}
@@ -740,6 +735,37 @@
 
 			/*# sourceMappingURL=luna-dom-highlighter.css.map*/
 		</style>
+		<style>
+			noscript > p:nth-last-of-type(1){
+				color: #aaa;
+				font-size: 13px;
+			}
+			@media (prefers-color-scheme:dark){
+				body {
+					background-color: #333;
+				}
+
+				h1 > i {
+					color: #ccc;
+				}
+
+				noscript > p {
+					color: #ccc;
+				}
+
+				noscript > p:nth-last-of-type(1){
+					color: #999;
+				}
+
+				ul a.file.gif::before,ul a.file.jpg::before,ul a.file.png::before,ul a.file.svg::before {
+					content: url(data:image/svg+xml;utf8;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCA4MCA4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSJub25lIiBzdHJva2U9IiNjY2MiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSI2IiB5PSI2IiB3aWR0aD0iNjgiIGhlaWdodD0iNjgiIHJ4PSI1IiByeT0iNSIvPjxjaXJjbGUgY3g9IjI0IiBjeT0iMjQiIHI9IjgiLz48cGF0aCBkPSJNNzMgNDkgNTkgMzQgMzcgNTJtMTYgMjBMMjcgNDIgNyA1OCIvPjwvc3ZnPg==)
+				}
+
+				ul#files a {
+					color: #ccc;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<main>
@@ -749,8 +775,9 @@
 			<ul id="files">
 			</ul>
 			<noscript>
+				<p>此处为文件列表</p>
 				<p>请允许使用JavaScript，否则网页无法通过GitHub API获取文件列表</p>
-				<p style="color: #aaa;font-size: 13px;">Please allow JavaScript, otherwise the web page can't get the file list through GitHub API.</p>
+				<p>Please allow JavaScript, otherwise the web page can't get the file list through GitHub API.</p>
 			</noscript>
 		</main>
 	</body>
