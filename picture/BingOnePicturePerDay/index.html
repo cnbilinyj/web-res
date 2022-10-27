@@ -771,6 +771,17 @@
 						ul1.innerHTML += "<li><a href=\"\./" + nameText + "\" title=\"/picture/BingOnePicturePerDay/" + nameText + "\" class=\"file jpg\">" + nameText +"</a></li>";
 					}
 				}
+			},
+			error: function(err) {
+				var errState;
+				if(err.readyState == 0){
+					errState = "未就绪，";
+				}else{
+					errState = "已就绪，";
+				}
+				errState += "错误码：" + err.status;
+				errState += "，错误返回字符串：" + err.statusText;
+				alert("文件列表获取错误，错误状态：\n" + errState);
 			}
 		});
 	</script>
