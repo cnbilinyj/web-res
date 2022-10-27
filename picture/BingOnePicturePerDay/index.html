@@ -792,7 +792,9 @@
 			success: function(data) {
 				for(let i = 0;i < JSON.parse(data).length;i++){
 					nameText = JSON.parse(data)[i].name;
-					ul1.innerHTML += "<li><a href=\"\./" + nameText + "\" title=\"/picture/BingOnePicturePerDay/" + nameText + "\" class=\"file jpg\">" + nameText +"</a></li>";
+					if(nameText != "index.html"){
+						ul1.innerHTML += "<li><a href=\"\./" + nameText + "\" title=\"/picture/BingOnePicturePerDay/" + nameText + "\" class=\"file jpg\">" + nameText +"</a></li>";
+					}
 				}
 			}
 		});
